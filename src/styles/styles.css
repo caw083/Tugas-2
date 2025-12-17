@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+
+.Gone {
+  display: none;
+}
+
+/* Saved stories page */
+.saved-stories {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.saved-stories__content {
+  margin-top: 16px;
+}
+
+.saved-stories__list {
+  display: grid;
+  gap: 16px;
+}
+
+.saved-story-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.saved-story-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.saved-story-card__date {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.saved-story-card__description {
+  margin: 8px 0;
+  color: #374151;
+}
+
+.saved-story-card__meta {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.saved-story-card__actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.saved-stories__count {
+  color: #374151;
+  font-weight: 600;
+}

@@ -1,0 +1,169 @@
+/* Story Detail Modal Styles */
+.story-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .story-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+  }
+  
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .story-modal-image-container {
+    position: relative;
+  }
+  
+  .story-modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .story-modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .story-modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .story-modal-body {
+    padding: 24px;
+  }
+  
+  .story-modal-title {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .story-modal-description {
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+  }
+  
+  .story-modal-divider {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+  }
+  
+  .story-modal-meta {
+    margin: 8px 0;
+    color: #888;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .story-modal-meta-icon {
+    font-size: 16px;
+  }
+  
+  .story-modal-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  
+  .story-modal-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex: 1;
+  }
+  
+  .story-modal-btn--primary {
+    background: #007bff;
+    color: white;
+  }
+  
+  .story-modal-btn--primary:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+  }
+  
+  .story-modal-btn--success {
+    background: #28a745;
+    color: white;
+  }
+  
+  .story-modal-btn--success:hover {
+    background: #1e7e34;
+    transform: translateY(-1px);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .story-modal-overlay {
+      padding: 10px;
+    }
+    
+    .story-modal-content {
+      max-width: 100%;
+      max-height: 90vh;
+    }
+    
+    .story-modal-image {
+      height: 200px;
+    }
+    
+    .story-modal-body {
+      padding: 16px;
+    }
+    
+    .story-modal-title {
+      font-size: 1.25rem;
+    }
+    
+    .story-modal-actions {
+      flex-direction: column;
+    }
+  }

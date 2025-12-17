@@ -1,0 +1,174 @@
+/* Guest Login Mode Selection Styles */
+.login-mode-selection {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.login-mode-selection label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-select:hover {
+  border-color: #9ca3af;
+}
+
+.login-mode-info {
+  margin-top: 8px;
+}
+
+.login-mode-info small {
+  color: #6b7280;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Guest Section Styles */
+.guest-section {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.guest-section::before {
+  content: "👤";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.guest-section label {
+  color: #92400e;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.guest-section input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d97706;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guest-section input[type="text"]:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.guest-section .field-info small {
+  color: #92400e;
+  font-size: 12px;
+}
+
+/* Form Action Button Updates */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-mode-selection {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .guest-section {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .guest-section::before {
+    top: 12px;
+    right: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Animation for smooth transitions */
+.guest-section {
+  transition: all 0.3s ease-in-out;
+  transform-origin: top;
+}
+
+.guest-section[style*="display: none"] {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.guest-section:not([style*="display: none"]) {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,288 @@
+/* ===== ABOUT PAGE STYLING ===== */
+
+.about-container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Background decorative elements */
+  .about-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: backgroundFloat 20s infinite linear;
+    z-index: 1;
+  }
+  
+  .about-container::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: floatUpDown 6s ease-in-out infinite;
+    z-index: 1;
+  }
+  
+  @keyframes backgroundFloat {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-50px, -50px) rotate(360deg); }
+  }
+  
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+  
+  /* Page Header */
+  .about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .about-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #e8f4f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  
+  .about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+    border-radius: 2px;
+    animation: shimmer 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes shimmer {
+    0% { opacity: 0.7; transform: translateX(-50%) scaleX(0.8); }
+    100% { opacity: 1; transform: translateX(-50%) scaleX(1.2); }
+  }
+  
+  .about-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+  }
+  
+  /* About Content */
+  .about-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 
+      0 20px 40px rgba(0,0,0,0.1),
+      0 0 0 1px rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  .about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 4px;
+    height: 1.2rem;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+  }
+  
+  .about-content p:hover {
+    transform: translateX(10px);
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+  }
+  
+  .about-content p:hover::before {
+    height: calc(100% - 2rem);
+    top: 1rem;
+  }
+  
+  .about-content strong {
+    color: #667eea;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 2px 0;
+    position: relative;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+    }
+    
+    .page-subtitle {
+      font-size: 1rem;
+    }
+    
+    .about-content {
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
+    
+    .about-content p {
+      font-size: 1rem;
+      padding-left: 1rem;
+      text-align: left;
+    }
+    
+    .about-content p:hover {
+      transform: none;
+      background: none;
+      padding: 0 1rem;
+      box-shadow: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-container {
+      padding: 0.5rem;
+    }
+    
+    .page-header {
+      margin-bottom: 2rem;
+    }
+    
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .about-content {
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    
+    .about-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* Dark theme support */
+  @media (prefers-color-scheme: dark) {
+    .about-content {
+      background: rgba(30, 30, 30, 0.95);
+      color: #e8e8e8;
+    }
+    
+    .about-content p {
+      color: #e8e8e8;
+    }
+    
+    .about-content p:hover {
+      background: rgba(102, 126, 234, 0.1);
+    }
+  }
+  
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .about-container::before,
+    .about-container::after,
+    .page-title::after,
+    .about-content p {
+      animation: none;
+      transition: none;
+    }
+    
+    .about-content p:hover {
+      transform: none;
+    }
+  }
+  
+  /* Focus styles for better accessibility */
+  .about-content:focus-within {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+  }
+  
+  /* Print styles */
+  @media print {
+    .about-container {
+      background: white;
+      color: black;
+      box-shadow: none;
+    }
+    
+    .about-container::before,
+    .about-container::after {
+      display: none;
+    }
+    
+    .page-title {
+      color: black;
+      text-shadow: none;
+    }
+    
+    .about-content {
+      background: white;
+      box-shadow: none;
+      border: 1px solid #ccc;
+    }
+  }
